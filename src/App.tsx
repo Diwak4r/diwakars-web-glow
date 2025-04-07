@@ -8,6 +8,8 @@ import Index from "./pages/Index";
 import Portfolio from "./pages/Portfolio";
 import Downloads from "./pages/Downloads";
 import NotFound from "./pages/NotFound";
+import BlogAIImpact from "./pages/BlogAIImpact";
+import BlogNoCodeWebsites from "./pages/BlogNoCodeWebsites";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +23,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/downloads" element={<Downloads />} />
+          <Route path="/blogs/ai-impact-on-students" element={<BlogAIImpact />} />
+          <Route path="/blogs/no-code-websites-2025" element={<BlogNoCodeWebsites />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X, Mail, Phone, MapPin, Languages, Award, Briefcase, GraduationCap } from "lucide-react";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -176,9 +176,9 @@ const Index = () => {
                   <span className="text-gradient">I am Diwakar</span>
                 </h1>
                 <p className="text-lg md:text-xl text-white/70 max-w-2xl leading-relaxed">
-                  A dedicated BIT student and IT support professional, 
+                  A dedicated BIT student at Himalayan Whitehouse International College and IT support professional at MC Group of Companies,
                   <span className="text-white"> passionate about technology and continuously advancing my skills.</span> 
-                  I play an integral role at MC Group of Companies, driving innovation and efficiency in IT operations.
+                  With experience in teaching and troubleshooting, I drive innovation and efficiency in IT operations.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
@@ -201,7 +201,7 @@ const Index = () => {
               <div className="relative hidden lg:block">
                 <div className="glass-card relative h-[400px] w-full rounded-2xl overflow-hidden transform rotate-3 shadow-2xl">
                   <img
-                    src="https://4kwallpapers.com/images/walls/thumbs_3t/20245.jpg"
+                    src="/lovable-uploads/6ffecd06-7dd5-4e79-9d34-6066c7f0f404.png"
                     alt="Diwakar Ray Yadav"
                     className="w-full h-full object-cover"
                   />
@@ -261,44 +261,84 @@ const Index = () => {
         <section id="about" className="py-24 px-6 md:px-8 bg-white/5 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">About</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">About Me</h2>
               <div className="h-1 w-20 bg-primary"></div>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div className="space-y-6">
                 <p className="text-white/80 leading-relaxed">
-                  I am Diwakar Ray Yadav, a passionate Bachelor in Information Technology (BIT) student at Himalayan Whitehouse International College, Kathmandu, Nepal. With a good foundation in Computer systems, and IT support, I am constantly exploring new technologies to enhance my skills and problem-solving abilities.
+                  I am Diwakar Ray Yadav, a passionate Bachelor in Information Technology (BIT) student at Himalayan Whitehouse International College, Kathmandu, Nepal. With a strong foundation in computer systems and IT support, I am constantly exploring new technologies to enhance my skills and problem-solving abilities.
                 </p>
                 <p className="text-white/80 leading-relaxed">
-                  Currently, I work as an IT Support at MC Group of Companies, where I assist in troubleshooting technical issues, managing IT infrastructure, and optimizing system performance with Essentials.
+                  Currently, I work as IT Support at MC Group of Companies, where I assist in troubleshooting technical issues, managing IT infrastructure, and optimizing system performance. Prior to this, I worked as an IT Instructor at Shrestha Computer Training Institute and IT Plus Computer Training Centre, teaching students data entry, typing, and computer basics.
                 </p>
                 <p className="text-white/80 leading-relaxed">
-                  As I continue my journey in the tech industry, I aspire to contribute to innovative projects that drive digital transformation and efficiency.
+                  As I continue my journey in the tech industry, I aspire to contribute to innovative projects that drive digital transformation and efficiency. My combination of teaching experience and technical skills allows me to approach problems with both analytical precision and clear communication.
                 </p>
               </div>
               
-              <div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-white mb-3">Education</h3>
-                    <p className="text-white/70">BIT at Himalayan Whitehouse International College</p>
+              <div className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 flex">
+                    <GraduationCap className="text-primary mr-4 shrink-0" />
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-3">Education</h3>
+                      <ul className="text-white/70 space-y-2">
+                        <li>BIT at Himalayan Whitehouse International College (2024-Present)</li>
+                        <li>Diploma in Computer Application (2023-2024)</li>
+                        <li>Intermediate (+2) in Science (2021-2023)</li>
+                      </ul>
+                    </div>
                   </div>
                   
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-white mb-3">Experience</h3>
-                    <p className="text-white/70">IT Support at MC Group of Companies</p>
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 flex">
+                    <Briefcase className="text-primary mr-4 shrink-0" />
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-3">Experience</h3>
+                      <ul className="text-white/70 space-y-2">
+                        <li>IT Support at MC Group (2024-Present)</li>
+                        <li>IT Instructor at Shrestha Computer (2023-2024)</li>
+                        <li>IT Instructor at IT Plus Computer (2021-2023)</li>
+                      </ul>
+                    </div>
                   </div>
                   
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-white mb-3">Skills</h3>
-                    <p className="text-white/70">IT Support, Infrastructure Management, Problem Solving</p>
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 flex">
+                    <Award className="text-primary mr-4 shrink-0" />
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-3">Skills</h3>
+                      <ul className="text-white/70 space-y-1">
+                        <li>Microsoft Office Suite</li>
+                        <li>Fast and accurate typing</li>
+                        <li>Data entry and management</li>
+                        <li>Computer troubleshooting</li>
+                        <li>Problem-solving</li>
+                        <li>Team collaboration</li>
+                      </ul>
+                    </div>
                   </div>
                   
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-white mb-3">Interests</h3>
-                    <p className="text-white/70">Technology, Digital Transformation, Innovation</p>
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 flex">
+                    <Languages className="text-primary mr-4 shrink-0" />
+                    <div>
+                      <h3 className="text-xl font-semibold text-white mb-3">Languages</h3>
+                      <ul className="text-white/70 space-y-2">
+                        <li>Nepali: Native</li>
+                        <li>English: Fluent</li>
+                        <li>Hindi: Proficient</li>
+                      </ul>
+                    </div>
                   </div>
+                </div>
+                
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <h3 className="text-xl font-semibold text-white mb-3">Achievements</h3>
+                  <ul className="text-white/70 list-disc pl-5 space-y-2">
+                    <li>Earned a Diploma in Computer Application with practical skills (2022)</li>
+                    <li>Trained over 30 students as an IT Instructor, improving their tech abilities</li>
+                    <li>Recognized as a quick learner and calm team player in busy settings</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -317,32 +357,37 @@ const Index = () => {
               <div className="space-y-8">
                 <p className="text-white/80 leading-relaxed">
                   Interested in collaborating or have questions? I'd love to hear from you. 
-                  Fill out the form or reach out directly through my social media profiles.
+                  Fill out the form or reach out directly through the contact information below.
                 </p>
                 
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
+                      <Mail className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <h3 className="text-white text-lg font-medium">Email</h3>
-                      <p className="text-white/70">contact@diwakaryadav.com</p>
+                      <a href="mailto:reachout.diwakar@gmail.com" className="text-white/70 hover:text-primary transition-colors">reachout.diwakar@gmail.com</a>
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
+                      <Phone className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-white text-lg font-medium">Phone</h3>
+                      <a href="tel:+9779842612756" className="text-white/70 hover:text-primary transition-colors">+977 9842612756</a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center">
+                      <MapPin className="h-5 w-5 text-white" />
                     </div>
                     <div>
                       <h3 className="text-white text-lg font-medium">Location</h3>
-                      <p className="text-white/70">Kathmandu, Nepal</p>
+                      <p className="text-white/70">Kamaladi, Kathmandu, Nepal</p>
                     </div>
                   </div>
                 </div>
@@ -395,13 +440,32 @@ const Index = () => {
               <div className="h-1 w-20 bg-primary"></div>
             </div>
             
-            <div className="text-center py-12">
-              <p className="text-white/80 text-lg">Blog posts coming soon. Stay tuned for insights and updates.</p>
-              <Button 
-                className="mt-8 bg-white/5 backdrop-blur-sm border border-white/10 text-white hover:bg-white/10 rounded-md py-6 px-6 text-base"
-              >
-                Notify Me When Available
-              </Button>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="glass-card p-6 rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2">
+                <h3 className="text-2xl font-semibold text-white mb-4">AI and Its Impact on Students</h3>
+                <p className="text-white/70 mb-4">
+                  In today's rapidly evolving educational landscape, artificial intelligence is transforming how students learn, research, and prepare for their futures...
+                </p>
+                <Button 
+                  className="bg-white/10 hover:bg-white/20 text-white"
+                  asChild
+                >
+                  <Link to="/blogs/ai-impact-on-students">Read More</Link>
+                </Button>
+              </div>
+              
+              <div className="glass-card p-6 rounded-xl hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2">
+                <h3 className="text-2xl font-semibold text-white mb-4">How to Make a Website in 2025 (No Code)</h3>
+                <p className="text-white/70 mb-4">
+                  The web development landscape has dramatically evolved, making it easier than ever to create professional websites without writing a single line of code...
+                </p>
+                <Button 
+                  className="bg-white/10 hover:bg-white/20 text-white"
+                  asChild
+                >
+                  <Link to="/blogs/no-code-websites-2025">Read More</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
