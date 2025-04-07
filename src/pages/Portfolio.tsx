@@ -156,7 +156,8 @@ const Portfolio = () => {
 
   return (
     <>
-      <style jsx>{`
+      <style>
+        {`
         @keyframes fall {
           0% { transform: translateY(-20px) rotate(0deg); }
           100% { transform: translateY(calc(100vh + 50px)) rotate(360deg); }
@@ -182,7 +183,8 @@ const Portfolio = () => {
           20% { opacity: 0; width: 100%; }
           100% { opacity: 0; width: 100%; }
         }
-      `}</style>
+        `}
+      </style>
       
       <div
         ref={cursorRef}
