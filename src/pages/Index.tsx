@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -8,7 +7,6 @@ const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const cursorRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   // Handle cursor movement
   useEffect(() => {
@@ -26,98 +24,12 @@ const Index = () => {
     };
   }, []);
 
-  // Initialize particle animation
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles: Array<{
-      x: number;
-      y: number;
-      size: number;
-      speedX: number;
-      speedY: number;
-      color: string;
-    }> = [];
-
-    // Create particles
-    for (let i = 0; i < 80; i++) {
-      const size = Math.random() * 3 + 1;
-      const x = Math.random() * canvas.width;
-      const y = Math.random() * canvas.height;
-      const speedX = Math.random() * 0.5 - 0.25;
-      const speedY = Math.random() * 0.5 - 0.25;
-      const color = `rgba(190, 190, 190, ${Math.random() * 0.2 + 0.1})`;
-      particles.push({ x, y, size, speedX, speedY, color });
-    }
-
-    // Animation function
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((particle) => {
-        ctx.fillStyle = particle.color;
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.fill();
-
-        particle.x += particle.speedX;
-        particle.y += particle.speedY;
-
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.y > canvas.height) particle.y = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-
-        // Draw connections
-        particles.forEach((otherParticle) => {
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 120) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(190, 190, 190, ${0.2 - distance / 600})`;
-            ctx.lineWidth = 0.2;
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.stroke();
-          }
-        });
-      });
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    // Handle window resize
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <>
       <div
         ref={cursorRef}
         className="fixed w-6 h-6 rounded-full border-2 border-primary pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-100 ease-out"
       ></div>
-      <canvas
-        ref={canvasRef}
-        className="fixed top-0 left-0 w-full h-full -z-10"
-      ></canvas>
       
       {/* Mobile Menu */}
       <div className={`fixed inset-0 bg-black/95 z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden`}>
@@ -143,7 +55,6 @@ const Index = () => {
             <Link to="/">Diwakar</Link>
           </div>
           
-          {/* Desktop navigation */}
           <nav className="hidden lg:block">
             <ul className="flex space-x-8">
               <li><Link to="/" className="text-white/80 hover:text-white transition-colors text-sm uppercase tracking-wider">Home</Link></li>
@@ -155,7 +66,6 @@ const Index = () => {
             </ul>
           </nav>
           
-          {/* Mobile menu button */}
           <button 
             className="text-white lg:hidden" 
             onClick={() => setIsMenuOpen(true)}
@@ -166,7 +76,6 @@ const Index = () => {
       </header>
 
       <main className="pt-24">
-        {/* Hero Section */}
         <section className="relative min-h-screen flex items-center px-6 md:px-8">
           <div className="max-w-7xl mx-auto w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -213,7 +122,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Projects Section */}
         <section id="projects" className="py-24 px-6 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
@@ -241,7 +149,6 @@ const Index = () => {
                 </div>
               </a>
               
-              {/* Additional project cards can be added here */}
               <div className="project-card bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2">
                 <div className="h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-white/5">
                   <div className="flex items-center justify-center h-full">
@@ -257,7 +164,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* About Section */}
         <section id="about" className="py-24 px-6 md:px-8 bg-white/5 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
@@ -345,7 +251,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Contact Section */}
         <section id="contact" className="py-24 px-6 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
@@ -432,7 +337,6 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Blog Section */}
         <section id="blogs" className="py-24 px-6 md:px-8 bg-white/5 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">

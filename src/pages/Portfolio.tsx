@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -8,7 +7,6 @@ const Portfolio = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const cursorRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
-  const animeElementsRef = useRef<HTMLDivElement>(null);
 
   // Handle cursor movement
   useEffect(() => {
@@ -25,108 +23,6 @@ const Portfolio = () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-
-  // Create anime-inspired elements
-  useEffect(() => {
-    const animeContainer = animeElementsRef.current;
-    if (!animeContainer) return;
-    
-    // Clear any existing elements
-    animeContainer.innerHTML = '';
-    
-    // Create sakura petals
-    for (let i = 0; i < 20; i++) {
-      createSakuraPetal(animeContainer);
-    }
-    
-    // Create energy orbs
-    for (let i = 0; i < 12; i++) {
-      createEnergyOrb(animeContainer);
-    }
-    
-    // Create glow lines
-    for (let i = 0; i < 5; i++) {
-      createGlowLine(animeContainer);
-    }
-  }, []);
-
-  // Create a sakura petal
-  const createSakuraPetal = (container: HTMLDivElement) => {
-    const petal = document.createElement('div');
-    const size = Math.random() * 20 + 10;
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight;
-    const duration = Math.random() * 20 + 10;
-    const delay = Math.random() * 10;
-    
-    petal.className = 'absolute pointer-events-none';
-    petal.style.width = `${size}px`;
-    petal.style.height = `${size}px`;
-    petal.style.backgroundImage = 'radial-gradient(circle at 30% 30%, rgba(255, 207, 210, 0.8), rgba(255, 180, 190, 0.6))';
-    petal.style.borderRadius = '100% 0 100% 0';
-    petal.style.left = `${startX}px`;
-    petal.style.top = `${startY}px`;
-    petal.style.opacity = '0.6';
-    petal.style.boxShadow = '0 0 5px rgba(255, 180, 190, 0.3)';
-    petal.style.zIndex = '-1';
-    petal.style.transform = `rotate(${Math.random() * 360}deg)`;
-    petal.style.animation = `
-      fall ${duration}s linear ${delay}s infinite,
-      rotate ${duration / 2}s ease-in-out ${delay}s infinite alternate
-    `;
-    
-    container.appendChild(petal);
-  };
-  
-  // Create energy orb (like chakra or ki)
-  const createEnergyOrb = (container: HTMLDivElement) => {
-    const orb = document.createElement('div');
-    const size = Math.random() * 8 + 4;
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight;
-    const duration = Math.random() * 30 + 30;
-    
-    orb.className = 'absolute pointer-events-none';
-    orb.style.width = `${size}px`;
-    orb.style.height = `${size}px`;
-    orb.style.backgroundImage = 'radial-gradient(circle at 30% 30%, rgba(110, 159, 255, 0.8), rgba(90, 120, 230, 0.4))';
-    orb.style.borderRadius = '50%';
-    orb.style.left = `${startX}px`;
-    orb.style.top = `${startY}px`;
-    orb.style.opacity = '0.6';
-    orb.style.boxShadow = '0 0 10px rgba(110, 159, 255, 0.5)';
-    orb.style.zIndex = '-1';
-    orb.style.animation = `
-      float ${duration}s linear infinite,
-      pulse 4s ease-in-out infinite alternate
-    `;
-    
-    container.appendChild(orb);
-  };
-  
-  // Create glow lines (like sword slashes)
-  const createGlowLine = (container: HTMLDivElement) => {
-    const line = document.createElement('div');
-    const width = Math.random() * 150 + 100;
-    const height = 2;
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight;
-    const angle = Math.random() * 360;
-    const delay = Math.random() * 15;
-    
-    line.className = 'absolute pointer-events-none';
-    line.style.width = `${width}px`;
-    line.style.height = `${height}px`;
-    line.style.background = 'linear-gradient(90deg, transparent, rgba(150, 200, 255, 0.8), transparent)';
-    line.style.left = `${startX}px`;
-    line.style.top = `${startY}px`;
-    line.style.opacity = '0';
-    line.style.zIndex = '-1';
-    line.style.transform = `rotate(${angle}deg)`;
-    line.style.animation = `slash 4s ease-in-out ${delay}s infinite`;
-    
-    container.appendChild(line);
-  };
 
   // Timeline scrolling animation
   useEffect(() => {
@@ -156,45 +52,12 @@ const Portfolio = () => {
 
   return (
     <>
-      <style>
-        {`
-        @keyframes fall {
-          0% { transform: translateY(-20px) rotate(0deg); }
-          100% { transform: translateY(calc(100vh + 50px)) rotate(360deg); }
-        }
-        @keyframes rotate {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        @keyframes float {
-          0% { transform: translate(0, 0); }
-          25% { transform: translate(20px, 30px); }
-          50% { transform: translate(-20px, 50px); }
-          75% { transform: translate(-30px, 20px); }
-          100% { transform: translate(0, 0); }
-        }
-        @keyframes pulse {
-          0% { opacity: 0.3; transform: scale(0.8); }
-          100% { opacity: 0.7; transform: scale(1.2); }
-        }
-        @keyframes slash {
-          0% { opacity: 0; width: 0; }
-          10% { opacity: 0.8; width: 100%; }
-          20% { opacity: 0; width: 100%; }
-          100% { opacity: 0; width: 100%; }
-        }
-        `}
-      </style>
-      
       <div
         ref={cursorRef}
         className="fixed w-6 h-6 rounded-full border-2 border-primary pointer-events-none z-50 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-100 ease-out"
       ></div>
 
       <div className="min-h-screen bg-black text-white overflow-hidden">
-        {/* Anime-inspired background elements */}
-        <div ref={animeElementsRef} className="fixed inset-0 overflow-hidden pointer-events-none"></div>
-        
         <header className="fixed top-0 left-0 w-full z-30 bg-white/5 backdrop-blur-lg border-b border-white/10">
           <div className="max-w-7xl mx-auto px-6 md:px-8 py-6 flex justify-between items-center">
             <div className="text-2xl font-semibold text-white">

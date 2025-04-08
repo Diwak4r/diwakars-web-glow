@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Download } from "lucide-react";
@@ -59,6 +58,7 @@ const Downloads = () => {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                {/* Download Cards */}
                 {/* Download Card 1 */}
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:bg-white/10 group">
                   <div className="p-6">
@@ -116,6 +116,7 @@ const Downloads = () => {
                   </div>
                 </div>
                 
+                {/* Coming Soon Card */}
                 {/* Coming Soon Card */}
                 <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:bg-white/10 group col-span-1 md:col-span-2 lg:col-span-3">
                   <div className="p-8 text-center">

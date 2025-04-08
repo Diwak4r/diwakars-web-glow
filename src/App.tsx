@@ -10,6 +10,7 @@ import Downloads from "./pages/Downloads";
 import NotFound from "./pages/NotFound";
 import BlogAIImpact from "./pages/BlogAIImpact";
 import BlogNoCodeWebsites from "./pages/BlogNoCodeWebsites";
+import AnimeBackground from "./components/AnimeBackground";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <AnimeBackground />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/portfolio" element={<Portfolio />} />
